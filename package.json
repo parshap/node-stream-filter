@@ -1,0 +1,16 @@
+{
+  "name": "stream-filter",
+  "version": "0.0.0",
+  "description": "Filter data passed through",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:parshap/node-stream-filter"
+  },
+  "keywords": [
+    "stream",
+    "filter"
+  ],
+  "author": "Parsha Pourkhomami",
+  "license": "Public Domain",
+}
