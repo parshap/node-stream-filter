@@ -19,4 +19,7 @@
   "devDependencies": {
     "tape": "~1"
   },
+  "dependencies": {
+    "through": "~2"
+  }
 }
