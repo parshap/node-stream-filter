@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Filter data passed through",
   "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:parshap/node-stream-filter"
@@ -13,4 +16,7 @@
   ],
   "author": "Parsha Pourkhomami",
   "license": "Public Domain",
+  "devDependencies": {
+    "tape": "~1"
+  },
 }
