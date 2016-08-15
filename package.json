@@ -17,7 +17,7 @@
   "author": "Parsha Pourkhomami",
   "license": "Public Domain",
   "devDependencies": {
-    "tape": "~1"
+    "tape": "^4.6"
   },
   "dependencies": {
     "through2": "^2.0.1"
