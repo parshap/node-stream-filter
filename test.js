@@ -11,7 +11,7 @@ test("filter", function(t) {
 	stream.write("test");
 	stream.write("t");
 	stream.write("hello");
-	stream.write("a");
+	stream.end("a");
 	t.end();
 });
 
@@ -27,5 +27,5 @@ test("filter async", function(t) {
 	stream.write("test");
 	stream.write("t");
 	stream.write("hello");
-	stream.write("a");
+	stream.end("a");
 });
