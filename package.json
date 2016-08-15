@@ -4,7 +4,8 @@
   "description": "Filter data passed through",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
