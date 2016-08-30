@@ -4,7 +4,8 @@
   "description": "Filter data passed through",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
@@ -15,11 +16,12 @@
     "filter"
   ],
   "author": "Parsha Pourkhomami",
+  "contributors": ["Jannis R <mail@jannisr.de>"],
   "license": "Public Domain",
   "devDependencies": {
-    "tape": "~1"
+    "tape": "^4.6"
   },
   "dependencies": {
-    "through": "~2"
+    "through2": "^2.0.1"
   }
 }
