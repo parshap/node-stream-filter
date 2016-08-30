@@ -2,9 +2,7 @@
 
 Filter data using a [through stream](https://github.com/rvagg/through2).
 
-[![build status](https://img.shields.io/travis/parshap/stream-filter.svg)](https://travis-ci.org/parshap/stream-filter)
-[![dependency status](https://img.shields.io/david/parshap/stream-filter.svg)](https://david-dm.org/parshap/stream-filter)
-[![dev dependency status](https://img.shields.io/david/dev/parshap/stream-filter.svg)](https://david-dm.org/parshap/stream-filter#info=devDependencies)
+[![build status](https://img.shields.io/travis/parshap/node-stream-filter.svg)](https://travis-ci.org/parshap/node-stream-filter)
 
 # Example
 
