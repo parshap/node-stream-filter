@@ -6,11 +6,17 @@ var through = require("through2");
 // # Filter
 // Create a through stream that only passes data that passes the given test
 // function
-module.exports = function(test, opt) {
+var filter = module.exports = function(test, opt) {
 	return through(opt || {}, function(data, _, cb) {
 		if (test(data)) cb(null, data);
 		else cb(null);
 	});
+};
+
+module.exports.obj = function(test, opt) {
+	opt = opt || {}
+	opt.objectMode = true
+	return filter(test, opt)
 };
 
 // # Async Filter

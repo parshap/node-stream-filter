@@ -15,6 +15,19 @@ test("filter", function(t) {
 	t.end();
 });
 
+test("filter.obj", function(t) {
+	var stream = filter.obj(function(data) {
+		return data.foo > 0;
+	});
+	t.plan(2);
+	stream.on("data", t.ok.bind(t));
+	stream.on("error", t.ifError.bind(t));
+	stream.write({foo: 2});
+	stream.write({foo: 0});
+	stream.end({foo: 1, bar: 'baz'});
+	t.end();
+});
+
 test("filter async", function(t) {
 	var stream = filter.async(function(data, callback) {
 		process.nextTick(function() {
