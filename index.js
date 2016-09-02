@@ -22,7 +22,7 @@ module.exports.obj = function(test, opt) {
 // # Async Filter
 // Create a through stream that only passes data that passes the given async
 // test function
-module.exports.async = function(test, opt) {
+var async = module.exports.async = function(test, opt) {
 	return through(opt || {}, function(data, _, cb) {
 		test(data, function(err, passed) {
 			if (err) cb(err);
@@ -30,4 +30,10 @@ module.exports.async = function(test, opt) {
 			else cb(null);
 		});
 	});
+};
+
+module.exports.async.obj = function(test, opt) {
+	opt = opt || {}
+	opt.objectMode = true
+	return async(test, opt)
 };

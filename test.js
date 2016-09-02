@@ -42,3 +42,18 @@ test("filter async", function(t) {
 	stream.write("hello");
 	stream.end("a");
 });
+
+
+test("filter.obj", function(t) {
+	var stream = filter.async.obj(function(data, cb) {
+		process.nextTick(function() {
+			cb(null, data.foo > 0);
+		});
+	});
+	t.plan(2);
+	stream.on("data", t.ok.bind(t));
+	stream.on("error", t.ifError.bind(t));
+	stream.write({foo: 2});
+	stream.write({foo: 0});
+	stream.end({foo: 1, bar: 'baz'});
+});
