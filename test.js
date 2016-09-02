@@ -28,7 +28,7 @@ test("filter.obj", function(t) {
 	t.end();
 });
 
-test("filter async", function(t) {
+test("filter.async", function(t) {
 	var stream = filter.async(function(data, callback) {
 		process.nextTick(function() {
 			callback(null, data.length > 1);
@@ -44,7 +44,7 @@ test("filter async", function(t) {
 });
 
 
-test("filter.obj", function(t) {
+test("filter.async.obj", function(t) {
 	var stream = filter.async.obj(function(data, cb) {
 		process.nextTick(function() {
 			cb(null, data.foo > 0);
