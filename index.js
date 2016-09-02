@@ -2,21 +2,26 @@
 "use strict";
 
 var through = require("through2");
+var xtend = require("xtend");
 
 // # Filter
 // Create a through stream that only passes data that passes the given test
 // function
-module.exports = function(test, opt) {
+var filter = module.exports = function(test, opt) {
 	return through(opt || {}, function(data, _, cb) {
 		if (test(data)) cb(null, data);
 		else cb(null);
 	});
 };
 
+module.exports.obj = function(test, opt) {
+	return filter(test, xtend({objectMode: true}, opt || {}, {}))
+};
+
 // # Async Filter
 // Create a through stream that only passes data that passes the given async
 // test function
-module.exports.async = function(test, opt) {
+var async = module.exports.async = function(test, opt) {
 	return through(opt || {}, function(data, _, cb) {
 		test(data, function(err, passed) {
 			if (err) cb(err);
@@ -24,4 +29,8 @@ module.exports.async = function(test, opt) {
 			else cb(null);
 		});
 	});
+};
+
+module.exports.async.obj = function(test, opt) {
+	return async(test, xtend({objectMode: true}, opt || {}, {}))
 };
