@@ -6,6 +6,7 @@ var xtend = require("xtend");
 
 var OBJECT_MODE_OPTS = {
   objectMode: true,
+  highWaterMark: 16,
 };
 
 // # Filter
